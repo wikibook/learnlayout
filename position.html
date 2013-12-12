@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+      <title>CSS - position</title>
+    
+    <meta name="viewport" content="width=600">
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/code.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35945753-1']);
+  _gaq.push(['_setDomainName', 'learnlayout.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+    </script>
+  </head>
+  <body class="ltr">
+
+    <div id="logo">
+      <a href="/learnlayout">
+        <img src="images/logo.png">
+        <span>CSS를 배웁시다</span>
+      </a>
+    </div>
+
+    <div id="menu">
+      <a class="home-link" href="/learnlayout">홈</a>
+      <a href="toc.html">목차</a>
+    </div>
+
+    <div id="container">
+
+      
+        <h1 class="content">position</h1>
+      
+
+      <p class="content">
+  좀 더 복잡한 레이아웃을 만들기 위해서는 <code>position</code> 프로퍼티에 관해 살펴볼 필요가 있습니다. <code>position</code> 프로퍼티에는 다양한 값을 설정할 수 있으며, 각 값의 이름은 제대로 지어지지 않아서 기억하기가 불가능합니다. 그럼 지금부터 하나씩 살펴보기로 하고, 이 페이지를 즐겨찾기에 추가해 둬야 할 수도 있습니다.
+</p>
+
+<h2 class="content">
+  static
+</h2>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.static</span> <span class="p">{</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">static</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<div class="elem">
+  <span class="label">&lt;div class="static"></span>
+  <p>
+    <code>static</code>은 기본값입니다. <code>position: static;</code>이 설정된 엘리먼트는 그다지 특별한 방식으로 위치가 지정된 것이 아닙니다. 정적(static) 엘리먼트는 위치가 <em>지정된 것이 아니라고</em> 표현하며, <code>static</code>이 아닌 다른 값으로 지정된 엘리먼트에 대해 <em>위치가 지정됐다고</em> 표현합니다.
+  </p>
+  <span class="endlabel">&lt;/div></span>
+</div>
+
+<h2 class="content">
+  relative
+</h2>
+
+<style>
+  .relative1 {
+    position: relative;
+  }
+  .relative2 {
+    position: relative;
+    top: -20px;
+    left: 20px;
+    background-color: white;
+    width: 500px;
+  }
+</style>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.relative1</span> <span class="p">{</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.relative2</span> <span class="p">{</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span>
+  <span class="k">top</span><span class="o">:</span> <span class="m">-20px</span><span class="p">;</span>
+  <span class="k">left</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="nb">white</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">500px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<div class="relative1 elem">
+  <span class="label">&lt;div class="relative1"></span>
+  <p>
+    <code>relative</code>는 별도의 프로퍼티를 지정하지 않는 이상 <code>static</code>과 동일하게 동작합니다.
+  </p>
+  <span class="endlabel">&lt;/div></span>
+</div>
+
+<div class="relative2 elem elem-red">
+  <span class="label">&lt;div class="relative2"></span>
+  <p>
+    상대 위치가 지정된 엘리먼트에 <code>top</code>이나 <code>right</code>, <code>bottom</code>, <code>left</code>를 지정하면 기본 위치와 다르게 위치가 조정됩니다. 다른 콘텐츠는 해당 엘리먼트에서 남긴 공백에 맞춰 들어가게끔 조정되지 않을 것입니다.
+  </p>
+  <span class="endlabel">&lt;/div></span>
+</div>
+
+<h2 class="content">
+  fixed
+</h2>
+
+<style>
+  .fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    background-color: white;
+    z-index: 9999;
+  }
+</style>
+
+<div class="fixed elem elem-green">
+  <span class="label">&lt;div class="fixed"></span>
+  <p>
+    안녕하세요! 아직은 저한테 관심을 보이지 마세요.
+  </p>
+  <span class="endlabel">&lt;/div></span>
+</div>
+
+<p class="content">
+  고정(fixed) 엘리먼트는 뷰포트(viewport)에 상대적으로 위치가 지정되는데, 이는 페이지가 스크롤되더라도 늘 같은 곳에 위치한다는 뜻입니다. <code>relative</code>와 마찬가지로 <code>top</code>이나 <code>right</code>, <code>bottom</code>, <code>left</code> 프로퍼티가 사용됩니다.
+</p>
+
+<p class="content">
+  페이지의 우측 하단 구석에 고정된 엘리먼트가 있다는 사실을 눈치채셨을 겁니다. 이 엘리먼트를 눈여겨보세요. 다음은 이 엘리먼트를 그 자리에 놓이게 만든 CSS 코드입니다.
+</p>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.fixed</span> <span class="p">{</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">fixed</span><span class="p">;</span>
+  <span class="k">bottom</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">right</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">200px</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="nb">white</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p class="content">
+  고정 엘리먼트는 평소대로라면 있었을 법한 공백을 페이지에 남기지 않습니다.
+</p>
+
+<p class="content">
+  모바일 브라우저의 경우 고정 엘리먼트 지원이 굉장히 불안정합니다. <a href="http://bradfrostweb.com/blog/mobile/fixed-position/">이와 관련된 사항은 이곳에서 좀 더 자세히 확인하실 수 있습니다</a>.
+</p>
+
+<h2 class="content">
+  absolute
+</h2>
+
+<style>
+  .relative {
+    position: relative;
+    width: 600px;
+    height: 400px;
+  }
+  .absolute {
+    position: absolute;
+    top: 120px;
+    right: 0;
+    width: 300px;
+    height: 200px;
+  }
+</style>
+
+<p class="content">
+  <code>absolute</code>는 가장 다루기 까다로운 위치 지정 값입니다. <code>absolute</code>는 뷰포트에 상대적으로 위치가 지정되는 게 아니라 <em>가장 가까운 곳에 위치한 조상 엘리먼트</em>에 상대적으로 위치가 지정된다는 점을 제외하면 <code>fixed</code>와 비슷하게 동작합니다. 절대 위치가 지정된 엘리먼트가 기준으로 삼는 조상 엘리먼트가 없으면 문서 본문(document body)을 기준으로 삼고, 페이지 스크롤에 따라 움직입니다. "위치가 지정된" 엘리먼트는 <code>position</code>이 <code>static</code>으로 지정되지 않은 엘리먼트를 가리킨다는 사실을 기억하세요.
+</p>
+
+<p class="content">
+  다음은 간단한 예제입니다.
+</p>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.relative</span> <span class="p">{</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">600px</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">400px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.absolute</span> <span class="p">{</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+  <span class="k">top</span><span class="o">:</span> <span class="m">120px</span><span class="p">;</span>
+  <span class="k">right</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">300px</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">200px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<div class="relative elem">
+  <span class="label">&lt;div class="relative"></span>
+  <p>
+    이 엘리먼트는 상대 위치가 지정돼 있습니다. 이 엘리먼트가 <code>position: static;</code>이었다면 절대 위치가 지정된 자식 엘리먼트는 이 엘리먼트에서 빠져나와 문서 본문을 기준으로 상대 위치가 지정됐을 것입니다.
+  </p>
+  <div class="absolute elem elem-red">
+    <span class="label">&lt;div class="absolute"></span>
+    <p>
+      이 엘리먼트에는 절대 위치가 지정돼 있습니다. 부모 엘리먼트를 기준으로 상대 위치가 정해져 있지요.
+    </p>
+    <span class="endlabel">&lt;/div></span>
+  </div>
+  <span class="endlabel">&lt;/div></span>
+</div>
+
+<p class="content">
+  여기서 배운 내용은 꽤나 까다롭지만 멋진 CSS 레이아웃을 만드는 데 필수적인 내용입니다. 다음 페이지에서는 좀 더 실전 예제에서 <code>position</code>을 사용해 보겠습니다.
+</p>
+
+      
+
+        <div class="nav-wrapper">
+
+          
+            <a class="nav prev" href="box-sizing.html">이전</a>
+          
+
+          
+            <a class="nav next" href="position-example.html">다음</a>
+          
+
+        </div>
+
+      
+
+      
+        <footer>
+          7 / 19
+        </footer>
+      
+
+    </div>
+
+    <div id="share">
+
+      <li>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://learnlayout.com/">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </li>
+
+      <li>
+        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Flearnlayout.com%2F&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
+      </li>
+
+      <li>
+        <div class="g-plusone" data-size="medium"></div>
+        <script type="text/javascript">
+          (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
+      </li>
+
+      <li id="license">
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png"></a>
+      </li>
+
+    </div>
+    <div id="advertisements">
+      <span>Ads by <a href="http://bocoup.com">Bocoup</a></span>
+      <script type="text/javascript">var p="http",d="static";if(document.location.protocol=="https:"){p+="s";d="engine";}var z=document.createElement("script");z.type="text/javascript";z.async=true;z.src=p+"://"+d+".adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);</script>
+      <script type="text/javascript">
+        var ados = ados || {};
+        ados.run = ados.run || [];
+        ados.run.push(function() {
+          /* load placement for account: Bocoup, site: Learn Layout, size: 0x0 - Static Text Link*/
+          ados_add_placement(4433, 27632, "azk92758", 20);
+          ados_load();
+        });
+      </script>
+      <div id="azk92758"></div>
+    </div>
+
+  </body>
+</html>

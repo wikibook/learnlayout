@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+      <title>CSS - float를 이용한 레이아웃 예제</title>
+    
+    <meta name="viewport" content="width=600">
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/code.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35945753-1']);
+  _gaq.push(['_setDomainName', 'learnlayout.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+    </script>
+  </head>
+  <body class="ltr">
+
+    <div id="logo">
+      <a href="/learnlayout">
+        <img src="images/logo.png">
+        <span>CSS를 배웁시다</span>
+      </a>
+    </div>
+
+    <div id="menu">
+      <a class="home-link" href="/learnlayout">홈</a>
+      <a href="toc.html">목차</a>
+    </div>
+
+    <div id="container">
+
+      
+        <h1 class="content"><code>float</code>를 이용한 레이아웃 예제</h1>
+      
+
+      <p class="content">
+  <code>float</code>를 이용해 전체 레이아웃을 잡는 일도 굉장히 자주 접할 수 있습니다. 다음은 앞에서 <code>position</code>으로 잡은 레이아웃을 <code>float</code>로 잡은 레이아웃 예제입니다.
+</p>
+
+<style>
+  .clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+  nav {
+    float: left;
+    width: 200px;
+  }
+  section {
+    margin-left: 200px;
+  }
+</style>
+
+<div class="highlight"><pre><code class="css"><span class="nt">nav</span> <span class="p">{</span>
+  <span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">200px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">section</span> <span class="p">{</span>
+  <span class="k">margin-left</span><span class="o">:</span> <span class="m">200px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<div class="clearfix elem">
+  <span class="label">&lt;div class="clearfix"></span>
+
+  <nav class="elem elem-red">
+    <span class="label">&lt;nav></span>
+    <ul>
+      <li>
+        <a href="float-layout.html">홈</a>
+      </li>
+      <li>
+        <a href="float-layout.html">타코 메뉴</a>
+      </li>
+      <li>
+        <a href="float-layout.html">초안 목록</a>
+      </li>
+      <li>
+        <a href="float-layout.html">시간</a>
+      </li>
+      <li>
+        <a href="float-layout.html">방향</a>
+      </li>
+      <li>
+        <a href="float-layout.html">연락처</a>
+      </li>
+    </ul>
+    <span class="endlabel">&lt;/nav></span>
+  </nav>
+
+  <section class="elem elem-green">
+    <span class="label">&lt;section></span>
+    <p>
+      이 예제는 앞에서 만든 예제처럼 동작합니다. 컨테이너에 <code>clearfix</code>를 지정한 것을 눈여겨보세요. 이 예제에는 필요하지 않지만 <code>nav</code>가 더는 뜨지 않는 콘텐츠라면 필요할 것입니다.
+    </p>
+    <span class="endlabel">&lt;/section></span>
+  </section>
+
+  <section class="elem elem-green ipsum">
+    <span class="label">&lt;section></span>
+    <p>
+      나랏말ᄊᆞ미 中듀ᇰ國귁에 달아 文문字ᄍᆞᆼ와로 서르 ᄉᆞᄆᆞᆺ디 아니ᄒᆞᆯᄊᆡ 이런 젼ᄎᆞ로 어린百ᄇᆡᆨ姓셔ᇰ이 니르고져 호ᇙ 배 이셔도 ᄆᆞᄎᆞᆷ내 제 ᄠᅳ들 시러 펴디 몯ᄒᆞᇙ 노미 하니라 내 이ᄅᆞᆯ 爲윙ᄒᆞ야 어엿비 너겨 새로 스믈여듧 字ᄍᆞᆼᄅᆞᆯ ᄆᆡᇰᄀᆞ노니 사ᄅᆞᆷ마다 ᄒᆡᅇᅧ 수ᄫᅵ 니겨 날로 ᄡᅮ메 便뼌安ᅙᅡᆫ킈 ᄒᆞ고져 ᄒᆞᇙ ᄯᆞᄅᆞ미니라ㄱ·ᄂᆞᆫ:엄쏘·리·니君군ㄷ字·ᄍᆞᆼ·처ᅀᅥᆷ·펴·아·나ᄂᆞᆫ소·리·ᄀᆞᄐᆞ·니ᄀᆞᆯ·ᄫᅡ·쓰·면虯뀨ᇢㅸ字·ᄍᆞᆼ·처ᅀᅥᆷ·펴·아·나ᄂᆞᆫ소·리·ᄀᆞ·ᄐᆞ니·라ㅋ·ᄂᆞᆫ:엄쏘·리·니快·쾡ㆆ字·ᄍᆞᆼ·처ᅀᅥᆷ·펴·아·나ᄂᆞᆫ소·리·ᄀᆞ·ᄐᆞ니·라ㆁ·ᄂᆞᆫ:엄쏘·리·니業·ᅌᅥᆸ字·ᄍᆞᆼ·처ᅀᅥᆷ·펴·아·나ᄂᆞᆫ소·리·ᄀᆞ·ᄐᆞ니·라ㄷ·ᄂᆞᆫ·혀쏘·리·니斗두ᇢㅸ字·ᄍᆞᆼ·처ᅀᅥᆷ·펴·아·나ᄂᆞᆫ소·리·ᄀᆞ·ᄐᆞ니ᄀᆞᆯ·ᄫᅡ·쓰·면覃땀ㅂ字·ᄍᆞᆼ·처ᅀᅥᆷ·펴·아·나ᄂᆞᆫ소·리·ᄀᆞ·ᄐᆞ니·라
+    </p>
+    <span class="endlabel">&lt;/section></span>
+  </section>
+
+</div>
+
+      
+
+        <div class="nav-wrapper">
+
+          
+            <a class="nav prev" href="clearfix.html">이전</a>
+          
+
+          
+            <a class="nav next" href="percent.html">다음</a>
+          
+
+        </div>
+
+      
+
+      
+        <footer>
+          12 / 19
+        </footer>
+      
+
+    </div>
+
+    <div id="share">
+
+      <li>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://learnlayout.com/">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </li>
+
+      <li>
+        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Flearnlayout.com%2F&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
+      </li>
+
+      <li>
+        <div class="g-plusone" data-size="medium"></div>
+        <script type="text/javascript">
+          (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
+      </li>
+
+      <li id="license">
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png"></a>
+      </li>
+
+    </div>
+    <div id="advertisements">
+      <span>Ads by <a href="http://bocoup.com">Bocoup</a></span>
+      <script type="text/javascript">var p="http",d="static";if(document.location.protocol=="https:"){p+="s";d="engine";}var z=document.createElement("script");z.type="text/javascript";z.async=true;z.src=p+"://"+d+".adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);</script>
+      <script type="text/javascript">
+        var ados = ados || {};
+        ados.run = ados.run || [];
+        ados.run.push(function() {
+          /* load placement for account: Bocoup, site: Learn Layout, size: 0x0 - Static Text Link*/
+          ados_add_placement(4433, 27632, "azk92758", 20);
+          ados_load();
+        });
+      </script>
+      <div id="azk92758"></div>
+    </div>
+
+  </body>
+</html>

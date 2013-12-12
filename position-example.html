@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+      <title>CSS - 위치 지정 예제</title>
+    
+    <meta name="viewport" content="width=600">
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/code.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35945753-1']);
+  _gaq.push(['_setDomainName', 'learnlayout.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+    </script>
+  </head>
+  <body class="ltr">
+
+    <div id="logo">
+      <a href="/learnlayout">
+        <img src="images/logo.png">
+        <span>CSS를 배웁시다</span>
+      </a>
+    </div>
+
+    <div id="menu">
+      <a class="home-link" href="/learnlayout">홈</a>
+      <a href="toc.html">목차</a>
+    </div>
+
+    <div id="container">
+
+      
+        <h1 class="content">위치 지정 예제</h1>
+      
+
+      <p class="content">
+  아래의 위치 지정 예제는 실제 예제에서 쓰기에 좀 더 적절할지도 모릅니다. 다음은 다소 현실적인 페이지 레이아웃입니다.
+</p>
+
+<style>
+  .container {
+    position: relative;
+  }
+  nav.elem {
+    position: absolute;
+    left: 0px;
+    width: 200px;
+  }
+  section {
+    /* position is static by default */
+    margin-left: 200px;
+  }
+  footer.elem {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 90px;
+    background-color: white;
+    width: 100%;
+    margin: 0;
+    z-index: 1;
+  }
+  body {
+    margin-bottom: 120px;
+  }
+</style>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.container</span> <span class="p">{</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">nav</span> <span class="p">{</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+  <span class="k">left</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">200px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">section</span> <span class="p">{</span>
+  <span class="c">/* position is static by default */</span>
+  <span class="k">margin-left</span><span class="o">:</span> <span class="m">200px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">footer</span> <span class="p">{</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">fixed</span><span class="p">;</span>
+  <span class="k">bottom</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">left</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">70px</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="nb">white</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">body</span> <span class="p">{</span>
+  <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">120px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<div class="container elem">
+  <span class="label">&lt;div class="container"></span>
+
+  <nav class="elem elem-red">
+    <span class="label">&lt;nav></span>
+    <ul>
+      <li>
+        <a href="position-example.html">홈</a>
+      </li>
+      <li>
+        <a href="position-example.html">타코 메뉴</a>
+      </li>
+      <li>
+        <a href="position-example.html">초안 목록</a>
+      </li>
+      <li>
+        <a href="position-example.html">시간</a>
+      </li>
+      <li>
+        <a href="position-example.html">방향</a>
+      </li>
+      <li>
+        <a href="position-example.html">연락처</a>
+      </li>
+    </ul>
+    <span class="endlabel">&lt;/nav></span>
+  </nav>
+
+  <section class="elem elem-green">
+    <span class="label">&lt;section></span>
+    <p>
+      <code>section</code>에 지정한 <code>margin-left</code> 스타일은 <code>nav</code>가 들어갈 공간을 만들어 줍니다. 그렇게 하지 않으면 절대 및 정적 엘리먼트가 겹칠 것입니다.
+    </p>
+    <span class="endlabel">&lt;/section></span>
+  </section>
+
+  <section class="elem elem-green ipsum">
+    <span class="label">&lt;section></span>
+    <p>
+      나랏말ᄊᆞ미 中듀ᇰ國귁에 달아 文문字ᄍᆞᆼ와로 서르 ᄉᆞᄆᆞᆺ디 아니ᄒᆞᆯᄊᆡ 이런 젼ᄎᆞ로 어린百ᄇᆡᆨ姓셔ᇰ이 니르고져 호ᇙ 배 이셔도 ᄆᆞᄎᆞᆷ내 제 ᄠᅳ들 시러 펴디 몯ᄒᆞᇙ 노미 하니라 내 이ᄅᆞᆯ 爲윙ᄒᆞ야 어엿비 너겨 새로 스믈여듧 字ᄍᆞᆼᄅᆞᆯ ᄆᆡᇰᄀᆞ노니 사ᄅᆞᆷ마다 ᄒᆡᅇᅧ 수ᄫᅵ 니겨 날로 ᄡᅮ메 便뼌安ᅙᅡᆫ킈 ᄒᆞ고져 ᄒᆞᇙ ᄯᆞᄅᆞ미니라ㄱ·ᄂᆞᆫ:엄쏘·리·니君군ㄷ字·ᄍᆞᆼ·처ᅀᅥᆷ·펴·아·나ᄂᆞᆫ소·리·ᄀᆞᄐᆞ·니ᄀᆞᆯ·ᄫᅡ·쓰·면虯뀨ᇢㅸ字·ᄍᆞᆼ·처ᅀᅥᆷ·펴·아·나ᄂᆞᆫ소·리·ᄀᆞ·ᄐᆞ니·라ㅋ·ᄂᆞᆫ:엄쏘·리·니快·쾡ㆆ字·ᄍᆞᆼ·처ᅀᅥᆷ·펴·아·나ᄂᆞᆫ소·리·ᄀᆞ·ᄐᆞ니·라ㆁ·ᄂᆞᆫ:엄쏘·리·니業·ᅌᅥᆸ字·ᄍᆞᆼ·처ᅀᅥᆷ·펴·아·나ᄂᆞᆫ소·리·ᄀᆞ·ᄐᆞ니·라ㄷ·ᄂᆞᆫ·혀쏘·리·니斗두ᇢㅸ字·ᄍᆞᆼ·처ᅀᅥᆷ·펴·아·나ᄂᆞᆫ소·리·ᄀᆞ·ᄐᆞ니ᄀᆞᆯ·ᄫᅡ·쓰·면覃땀ㅂ字·ᄍᆞᆼ·처ᅀᅥᆷ·펴·아·나ᄂᆞᆫ소·리·ᄀᆞ·ᄐᆞ니·라
+    </p>
+    <span class="endlabel">&lt;/section></span>
+  </section>
+
+  <section class="elem elem-green">
+    <span class="label">&lt;section></span>
+    <p>
+      브라우저 크기를 조절했을 때 어떻게 되는지 확인해 보세요. 잘 작동할 겁니다!
+    </p>
+    <span class="endlabel">&lt;/section></span>
+  </section>
+
+  <footer class="elem elem-orange">
+    <span class="label">&lt;footer></span>
+    <p>
+      고정 헤더나 푸터를 사용한다면 그것들이 들어갈 공간을 마련해 줘야 합니다! 여기서는 <code>body</code>에 <code>margin-bottom</code>을 집어넣었습니다.
+    </p>
+    <span class="endlabel">&lt;/footer></span>
+  </footer>
+
+</div>
+
+<p class="content">
+  이 예제에서는 컨테이너의 높이가 내비게이션보다 높기 때문에 제대로 동작합니다. 그렇지 않다면 내비게이션 영역이 컨테이너 밖으로 흘러넘칠 것입니다. 이어지는 페이지에서는 각기 장단점이 있는 다른 레이아웃 기법을 살펴보겠습니다.
+</p>
+
+      
+
+        <div class="nav-wrapper">
+
+          
+            <a class="nav prev" href="position.html">이전</a>
+          
+
+          
+            <a class="nav next" href="float.html">다음</a>
+          
+
+        </div>
+
+      
+
+      
+        <footer>
+          8 / 19
+        </footer>
+      
+
+    </div>
+
+    <div id="share">
+
+      <li>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://learnlayout.com/">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </li>
+
+      <li>
+        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Flearnlayout.com%2F&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
+      </li>
+
+      <li>
+        <div class="g-plusone" data-size="medium"></div>
+        <script type="text/javascript">
+          (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
+      </li>
+
+      <li id="license">
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png"></a>
+      </li>
+
+    </div>
+    <div id="advertisements">
+      <span>Ads by <a href="http://bocoup.com">Bocoup</a></span>
+      <script type="text/javascript">var p="http",d="static";if(document.location.protocol=="https:"){p+="s";d="engine";}var z=document.createElement("script");z.type="text/javascript";z.async=true;z.src=p+"://"+d+".adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);</script>
+      <script type="text/javascript">
+        var ados = ados || {};
+        ados.run = ados.run || [];
+        ados.run.push(function() {
+          /* load placement for account: Bocoup, site: Learn Layout, size: 0x0 - Static Text Link*/
+          ados_add_placement(4433, 27632, "azk92758", 20);
+          ados_load();
+        });
+      </script>
+      <div id="azk92758"></div>
+    </div>
+
+  </body>
+</html>

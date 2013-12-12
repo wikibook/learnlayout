@@ -1,0 +1,330 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+      <title>CSS - flexbox</title>
+    
+    <meta name="viewport" content="width=600">
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/code.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35945753-1']);
+  _gaq.push(['_setDomainName', 'learnlayout.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+    </script>
+  </head>
+  <body class="ltr">
+
+    <div id="logo">
+      <a href="/learnlayout">
+        <img src="images/logo.png">
+        <span>CSS를 배웁시다</span>
+      </a>
+    </div>
+
+    <div id="menu">
+      <a class="home-link" href="/learnlayout">홈</a>
+      <a href="toc.html">목차</a>
+    </div>
+
+    <div id="container">
+
+      
+        <h1 class="content">flexbox</h1>
+      
+
+      <p class="content">
+  새로운 <code>flexbox</code> 레이아웃 모드는 우리가 CSS로 레이아웃을 잡는 방법을 재정의할 기세입니다. 아쉽게도 <code>flexbox</code> 규격이 최근에 상당히 많이 바뀌었기 때문에 각 브라우저마다 다른 식으로 구현돼 있습니다. 그럼에도 어떤 것인지 알아두는 차원에서 몇 가지 예제를 공유하고자 합니다. 여기서 선보이는 예제는 현재 <a href="http://www.w3.org/TR/css3-flexbox/">최신 버전의 표준</a>을 사용하는 <a href="http://caniuse.com/flexbox">일부 브라우저</a>에서만 동작합니다.
+</p>
+
+<p class="content">
+  <code>flexbox</code>와 관련된 오래된 자료가 굉장히 많습니다. <code>flexbox</code>에 관해 좀 더 배우고 싶다면 참고 자료가 최신 내용을 반영하고 있는지 확인하는 방법을 배울 수 있도록 <a href="http://css-tricks.com/old-flexbox-and-new-flexbox/">이곳에서 시작하세요</a>. 저도 <a href="http://weblog.bocoup.com/dive-into-flexbox/">최신 구문을 이용하는 상세한 글</a>을 쓴 적이 있습니다.
+</p>
+
+<p class="content">
+  <code>flexbox</code>를 이용해서 할 수 있는 일은 아주 많습니다. 영감을 주는 차원에서 몇 가지 예제를 알려주자면 다음과 같습니다.
+</p>
+
+<h2 class="content"><code>flexbox</code>를 이용한 간단한 레이아웃</h2>
+
+<style>
+  .container {
+    display: -webkit-flex;
+    display: flex;
+  }
+  nav {
+    width: 200px;
+  }
+  .flex-column {
+    -webkit-flex: 1;
+            flex: 1;
+  }
+</style>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.container</span> <span class="p">{</span>
+  <span class="k">display</span><span class="o">:</span> <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">flex</span><span class="p">;</span>
+  <span class="k">display</span><span class="o">:</span> <span class="n">flex</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">nav</span> <span class="p">{</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">200px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.flex-column</span> <span class="p">{</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">flex</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span>
+          <span class="n">flex</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<div class="container elem">
+  <span class="label">&lt;div class="container"></span>
+
+  <nav class="elem elem-red">
+    <span class="label">&lt;nav></span>
+    <ul>
+      <li>
+        <a href="flexbox.html">홈</a>
+      </li>
+      <li>
+        <a href="flexbox.html">타코 메뉴</a>
+      </li>
+      <li>
+        <a href="flexbox.html">초안 목록</a>
+      </li>
+      <li>
+        <a href="flexbox.html">시간</a>
+      </li>
+      <li>
+        <a href="flexbox.html">방향</a>
+      </li>
+      <li>
+        <a href="flexbox.html">연락처</a>
+      </li>
+    </ul>
+    <span class="endlabel">&lt;/nav></span>
+  </nav>
+
+  <div class="elem elem-red flex-column">
+    <span class="label">&lt;div class="flex-column"></span>
+
+    <section class="elem elem-green">
+      <span class="label">&lt;section></span>
+      <p>
+        <code>flexbox</code>는 엄청 쉬워요!
+      </p>
+      <span class="endlabel">&lt;/section></span>
+    </section>
+
+    <section class="elem elem-green ipsum">
+      <span class="label">&lt;section></span>
+      <p>
+        나랏말ᄊᆞ미 中듀ᇰ國귁에 달아 文문字ᄍᆞᆼ와로 서르 ᄉᆞᄆᆞᆺ디 아니ᄒᆞᆯᄊᆡ 이런 젼ᄎᆞ로 어린百ᄇᆡᆨ姓셔ᇰ이 니르고져 호ᇙ 배 이셔도 ᄆᆞᄎᆞᆷ내 제 ᄠᅳ들 시러 펴디 몯ᄒᆞᇙ 노미 하니라 내 이ᄅᆞᆯ 爲윙ᄒᆞ야 어엿비 너겨 새로 스믈여듧 字ᄍᆞᆼᄅᆞᆯ ᄆᆡᇰᄀᆞ노니 사ᄅᆞᆷ마다 ᄒᆡᅇᅧ 수ᄫᅵ 니겨 날로 ᄡᅮ메 便뼌安ᅙᅡᆫ킈 ᄒᆞ고져 ᄒᆞᇙ ᄯᆞᄅᆞ미니라ㄱ·ᄂᆞᆫ:엄쏘·리·니君군ㄷ字·ᄍᆞᆼ·처ᅀᅥᆷ·펴·아·나ᄂᆞᆫ소·리·ᄀᆞᄐᆞ·니ᄀᆞᆯ·ᄫᅡ·쓰·면虯뀨ᇢㅸ字·ᄍᆞᆼ·처ᅀᅥᆷ·펴·아·나ᄂᆞᆫ소·리·ᄀᆞ·ᄐᆞ니·라ㅋ·ᄂᆞᆫ:엄쏘·리·니快·쾡ㆆ字·ᄍᆞᆼ·처ᅀᅥᆷ·펴·아·나ᄂᆞᆫ소·리·ᄀᆞ·ᄐᆞ니·라ㆁ·ᄂᆞᆫ:엄쏘·리·니業·ᅌᅥᆸ字·ᄍᆞᆼ·처ᅀᅥᆷ·펴·아·나ᄂᆞᆫ소·리·ᄀᆞ·ᄐᆞ니·라ㄷ·ᄂᆞᆫ·혀쏘·리·니斗두ᇢㅸ字·ᄍᆞᆼ·처ᅀᅥᆷ·펴·아·나ᄂᆞᆫ소·리·ᄀᆞ·ᄐᆞ니ᄀᆞᆯ·ᄫᅡ·쓰·면覃땀ㅂ字·ᄍᆞᆼ·처ᅀᅥᆷ·펴·아·나ᄂᆞᆫ소·리·ᄀᆞ·ᄐᆞ니·라
+      </p>
+      <span class="endlabel">&lt;/section></span>
+    </section>
+
+    <span class="endlabel">&lt;/div></span>
+  </div>
+
+</div>
+
+<h2 class="content"><code>flexbox</code>를 이용한 멋진 레이아웃</h2>
+
+<style>
+.initial {
+  -webkit-flex: initial;
+          flex: initial;
+  width: 200px;
+  min-width: 100px;
+}
+.none {
+  -webkit-flex: none;
+          flex: none;
+  width: 200px;
+}
+.flex1 {
+  -webkit-flex: 1;
+          flex: 1;
+}
+.flex2 {
+  -webkit-flex: 2;
+          flex: 2;
+}
+</style>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.container</span> <span class="p">{</span>
+  <span class="k">display</span><span class="o">:</span> <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">flex</span><span class="p">;</span>
+  <span class="k">display</span><span class="o">:</span> <span class="n">flex</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.initial</span> <span class="p">{</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">flex</span><span class="o">:</span> <span class="n">initial</span><span class="p">;</span>
+          <span class="n">flex</span><span class="o">:</span> <span class="n">initial</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">200px</span><span class="p">;</span>
+  <span class="k">min-width</span><span class="o">:</span> <span class="m">100px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.none</span> <span class="p">{</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">flex</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+          <span class="n">flex</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">200px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.flex1</span> <span class="p">{</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">flex</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span>
+          <span class="n">flex</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.flex2</span> <span class="p">{</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">flex</span><span class="o">:</span> <span class="m">2</span><span class="p">;</span>
+          <span class="n">flex</span><span class="o">:</span> <span class="m">2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<div class="container elem">
+
+  <section class="elem elem-green initial">
+    <span class="label">&lt;div class="initial"></span>
+    <p>
+      전 여유 공간이 있으면 200px까지 늘어나고, 여유 공간이 없으면 100px까지 줄어들지만 그 이하로 더 작아지지는 않아요.
+    </p>
+    <span class="endlabel">&lt;/div></span>
+  </section>
+
+  <section class="elem elem-green none">
+    <span class="label">&lt;div class="none"></span>
+    <p>
+      전 항상 200px이에요.
+    </p>
+    <span class="endlabel">&lt;/div></span>
+  </section>
+
+  <section class="elem elem-green flex1">
+    <span class="label">&lt;div class="flex1"></span>
+    <p>
+      전 나머지 너비의 1/3을 채워요.
+    </p>
+    <span class="endlabel">&lt;/div></span>
+  </section>
+
+  <section class="elem elem-green flex2">
+    <span class="label">&lt;div class="flex2"></span>
+    <p>
+      전 나머지 너비의 2/3를 채워요.
+    </p>
+    <span class="endlabel">&lt;/div></span>
+  </section>
+
+</div>
+
+<h2 class="content"><code>flexbox</code>를 이용한 중앙 정렬</h2>
+
+<style>
+.vertical-container {
+  display: -webkit-flex;
+  display:         flex;
+  height: 300px;
+}
+.vertically-centered {
+  margin: auto;
+}
+</style>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.vertical-container</span> <span class="p">{</span>
+  <span class="k">display</span><span class="o">:</span> <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">flex</span><span class="p">;</span>
+  <span class="k">display</span><span class="o">:</span> <span class="n">flex</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">300px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.vertically-centered</span> <span class="p">{</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<div class="vertical-container elem">
+  <span class="label">&lt;div class="vertical-container"></span>
+
+  <section class="elem elem-green vertically-centered">
+    <span class="label">&lt;div class="vertically-centered"></span>
+    <p>
+      마침내 CSS에서도 뭔가를 수직 중앙에 두는 것이 쉬워졌군요!
+    </p>
+    <span class="endlabel">&lt;/div></span>
+  </section>
+
+  <span class="endlabel">&lt;/div></span>
+</div>
+
+      
+
+        <div class="nav-wrapper">
+
+          
+            <a class="nav prev" href="column.html">이전</a>
+          
+
+          
+            <a class="nav next" href="frameworks.html">다음</a>
+          
+
+        </div>
+
+      
+
+      
+        <footer>
+          18 / 19
+        </footer>
+      
+
+    </div>
+
+    <div id="share">
+
+      <li>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://learnlayout.com/">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </li>
+
+      <li>
+        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Flearnlayout.com%2F&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
+      </li>
+
+      <li>
+        <div class="g-plusone" data-size="medium"></div>
+        <script type="text/javascript">
+          (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
+      </li>
+
+      <li id="license">
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png"></a>
+      </li>
+
+    </div>
+    <div id="advertisements">
+      <span>Ads by <a href="http://bocoup.com">Bocoup</a></span>
+      <script type="text/javascript">var p="http",d="static";if(document.location.protocol=="https:"){p+="s";d="engine";}var z=document.createElement("script");z.type="text/javascript";z.async=true;z.src=p+"://"+d+".adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);</script>
+      <script type="text/javascript">
+        var ados = ados || {};
+        ados.run = ados.run || [];
+        ados.run.push(function() {
+          /* load placement for account: Bocoup, site: Learn Layout, size: 0x0 - Static Text Link*/
+          ados_add_placement(4433, 27632, "azk92758", 20);
+          ados_load();
+        });
+      </script>
+      <div id="azk92758"></div>
+    </div>
+
+  </body>
+</html>

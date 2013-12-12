@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+      <title>CSS - clear</title>
+    
+    <meta name="viewport" content="width=600">
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/code.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35945753-1']);
+  _gaq.push(['_setDomainName', 'learnlayout.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+    </script>
+  </head>
+  <body class="ltr">
+
+    <div id="logo">
+      <a href="/learnlayout">
+        <img src="images/logo.png">
+        <span>CSS를 배웁시다</span>
+      </a>
+    </div>
+
+    <div id="menu">
+      <a class="home-link" href="/learnlayout">홈</a>
+      <a href="toc.html">목차</a>
+    </div>
+
+    <div id="container">
+
+      
+        <h1 class="content">clear</h1>
+      
+
+      <p class="content">
+  <code>clear</code> 프로퍼티는 <code>float</code>의 동작 방식을 제어하는 데 중요합니다. 아래의 두 예제를 비교해 봅시다.
+</p>
+
+<style>
+  .box {
+    float: left;
+    width: 200px;
+    height: 100px;
+    margin: 1em;
+  }
+</style>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;box&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;section&gt;</span>...<span class="nt">&lt;/section&gt;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.box</span> <span class="p">{</span>
+  <span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">200px</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">1em</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p class="content">
+  <div class="box elem">
+    <span class="label">&lt;div class="box"></span>
+    <p>
+      마치 떠 있는 것만 같아요!
+    </p>
+    <span class="endlabel">&lt;/div></span>
+  </div>
+
+
+  <section class="elem elem-green">
+    <span class="label">&lt;section></span>
+    <p>
+      이 경우 <code>section</code> 엘리먼트는 실제로 <code>div</code> 다음에 있습니다. 하지만 <code>div</code>가 왼쪽으로 떠 있기 때문에 이런 결과가 나타난 것입니다. 즉, <code>section</code> 안의 텍스트가 <code>div</code> 주위에 떠 있고 <code>section</code>이 전체를 감싸고 있습니다. <code>section</code>을 실제로 떠 있는 엘리먼트 다음에 나타나게 하려면 어떻게 해야 할까요?
+    </p>
+    <span class="endlabel">&lt;/section></span>
+  </section>
+</p>
+
+<style>
+  .after-box {
+    clear: left;
+  }
+</style>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.box</span> <span class="p">{</span>
+  <span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">200px</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">1em</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.after-box</span> <span class="p">{</span>
+  <span class="k">clear</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p class="content">
+  <div class="box elem">
+    <span class="label">&lt;div class="box"></span>
+    <p>
+      마치 떠 있는 것만 같아요!
+    </p>
+    <span class="endlabel">&lt;/div></span>
+  </div>
+
+  <section class="elem elem-green after-box">
+    <span class="label">&lt;section class="after-box"></span>
+    <p>
+      <code>clear</code>를 이용해 이제 이 섹션을 떠 있는 <code>div</code> 아래로 옮겼습니다. 여기서는 <code>left</code> 값을 지정해 왼쪽에 떠 있는 엘리먼트들을 비웠습니다. 게다가 오른쪽(<code>right</code>)과 양쪽(<code>both</code>)도 비울 수 있습니다.
+    </p>
+    <span class="endlabel">&lt;/section></span>
+  </section>
+</p>
+
+      
+
+        <div class="nav-wrapper">
+
+          
+            <a class="nav prev" href="float.html">이전</a>
+          
+
+          
+            <a class="nav next" href="clearfix.html">다음</a>
+          
+
+        </div>
+
+      
+
+      
+        <footer>
+          10 / 19
+        </footer>
+      
+
+    </div>
+
+    <div id="share">
+
+      <li>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://learnlayout.com/">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </li>
+
+      <li>
+        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Flearnlayout.com%2F&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
+      </li>
+
+      <li>
+        <div class="g-plusone" data-size="medium"></div>
+        <script type="text/javascript">
+          (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
+      </li>
+
+      <li id="license">
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png"></a>
+      </li>
+
+    </div>
+    <div id="advertisements">
+      <span>Ads by <a href="http://bocoup.com">Bocoup</a></span>
+      <script type="text/javascript">var p="http",d="static";if(document.location.protocol=="https:"){p+="s";d="engine";}var z=document.createElement("script");z.type="text/javascript";z.async=true;z.src=p+"://"+d+".adzerk.net/ados.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(z,s);</script>
+      <script type="text/javascript">
+        var ados = ados || {};
+        ados.run = ados.run || [];
+        ados.run.push(function() {
+          /* load placement for account: Bocoup, site: Learn Layout, size: 0x0 - Static Text Link*/
+          ados_add_placement(4433, 27632, "azk92758", 20);
+          ados_load();
+        });
+      </script>
+      <div id="azk92758"></div>
+    </div>
+
+  </body>
+</html>
